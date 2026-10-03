@@ -56,7 +56,7 @@ def load_and_clean_users(file_path):
     with open(file_path, 'r') as user_file:
         df = csv.reader(user_file)
         for row in df:
-            if row == '':
+            if row[0] == '' or row[1] == '':
                 continue
             if len(row) == 2:
                 cursor.execute('''
