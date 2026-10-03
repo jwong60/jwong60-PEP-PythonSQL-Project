@@ -107,7 +107,7 @@ def write_user_analytics(csv_file_path):
 def write_ordered_calls(csv_file_path):
     with open(csv_file_path, 'w') as ordered_file:
         df = csv.writer(ordered_file)
-        cursor.execute('''SELECT userId, startTime
+        cursor.execute('''SELECT *
         FROM callLogs
         ORDER BY userId, startTime
         ''')
