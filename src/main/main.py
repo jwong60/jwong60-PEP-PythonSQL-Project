@@ -77,7 +77,7 @@ def load_and_clean_call_logs(file_path):
                 continue
             if len(row)==5:
                 cursor.execute('''
-                Insert INTO callLogs(callId, phoneNumber, startTime, endTime, direction) VALUES (?,?,?,?,?)
+                Insert INTO callLogs(phoneNumber, startTime, endTime, direction, callId) VALUES (?,?,?,?,?)
                 ''', row)
 
 
