@@ -58,7 +58,7 @@ def load_and_clean_users(file_path):
         for row in df:
             if row[0]== 'firstName' and row[1] == 'lastName':
                 continue
-            if row[0] == '' or row[1] == '':
+            if row[0].strip() == '' or row[1].strip() == '':
                 continue
             if len(row) == 2:
                 print(row)
