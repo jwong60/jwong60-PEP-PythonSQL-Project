@@ -73,7 +73,7 @@ def load_and_clean_call_logs(file_path):
         df = csv.reader(calllog_file)
         next (df)
         for row in df:
-            if row[0].strip()== '' or row[1].strip()== '':
+            if not all (value.strip() for value in row):
                 continue
             if len(row)==5:
                 print(row)
