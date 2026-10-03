@@ -95,20 +95,25 @@ def write_user_analytics(csv_file_path):
         GROUP BY userId
         ''')
         results = cursor.fetchall()
-        print(results)
+        # print(results)
         for row in results:
             df.writerow(row)
 
 
-    print("TODO: write_user_analytics")
 
 
 # This function will write the callLogs ordered by userId, then start time.
 # Then, write the ordered callLogs to orderedCalls.csv
 def write_ordered_calls(csv_file_path):
-
-    print("TODO: write_ordered_calls")
-
+    with open(csv_file_path, 'w') as ordered_file:
+        df = csv.writer(ordered_file)
+        cursor.execute('''SELECT userId, startTime
+        FROM callLogs
+        ORDER BY userId, startTime
+        ''')
+        results = cursor.fetchall()
+        for row in results:
+            df.writerow(row)
 
 
 # No need to touch the functions below!------------------------------------------
