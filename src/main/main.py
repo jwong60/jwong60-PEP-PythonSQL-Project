@@ -91,7 +91,6 @@ def write_user_analytics(csv_file_path):
         df = csv.writer(analytics_file)
         cursor.execute(''' SELECT userId, AVG(endTime-startTime) as avgDuration, count(*) as numCalls
         FROM callLogs
-        GROUP BY userId
         ''')
         results = cursor.fetchall()
         print(results)
