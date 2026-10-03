@@ -94,7 +94,8 @@ def write_user_analytics(csv_file_path):
         GROUP BY userId
         ''')
         results = cursor.fetchall()
-        analytics_file.write(results)
+        for row in results:
+            analytics_file.write(row)
 
 
     print("TODO: write_user_analytics")
