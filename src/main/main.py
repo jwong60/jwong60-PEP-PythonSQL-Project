@@ -93,7 +93,8 @@ def write_user_analytics(csv_file_path):
         FROM callLogs
         GROUP BY userId
         ''')
-        print(cr)
+
+        print(cursor)
 
 
     print("TODO: write_user_analytics")
