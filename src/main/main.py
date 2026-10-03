@@ -55,7 +55,8 @@ def main():
 def load_and_clean_users(file_path):
     with open(file_path, 'r') as user_file:
         cursor.execute('''
-        INSERT INTO users (firstName, lastName) Values(?, ?) 
+        INSERT INTO users (firstName, lastName) Values(?, ?),
+        row 
         ''')
         
 
