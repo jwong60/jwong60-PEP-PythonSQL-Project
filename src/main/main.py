@@ -89,7 +89,7 @@ def load_and_clean_call_logs(file_path):
 def write_user_analytics(csv_file_path):
     with open(csv_file_path, 'w') as analytics_file:
         df = csv.writer(analytics_file)
-        next(df)
+        df.writerow('userId', 'avgDuration', 'numCalls')
         cursor.execute(''' SELECT userId, AVG(endTime-startTime) as avgDuration, count(*) as numCalls
         FROM callLogs
         GROUP BY userId
