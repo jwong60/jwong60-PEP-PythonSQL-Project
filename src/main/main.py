@@ -95,7 +95,7 @@ def write_user_analytics(csv_file_path):
         ''')
         results = cursor.fetchall()
         for row in results:
-            analytics_file.write(row)
+            analytics_file.writerow(row)
 
 
     print("TODO: write_user_analytics")
