@@ -63,7 +63,7 @@ def load_and_clean_users(file_path):
                 continue
             if len(row) == 2:
                 cursor.execute('''
-                INSERT INTO users (firstName, lastName) Values(?, ?)
+                INSERT INTO users (firstName, lastName) VALUES (?, ?)
                 ''', row)
         
 
