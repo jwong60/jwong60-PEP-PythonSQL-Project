@@ -59,6 +59,7 @@ def load_and_clean_users(file_path):
             if row[0] == '' or row[1] == '':
                 continue
             if len(row) == 2:
+                print(row)
                 cursor.execute('''
                 INSERT INTO users (firstName, lastName) Values(?, ?)
                 ''', row)
