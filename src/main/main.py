@@ -56,9 +56,10 @@ def load_and_clean_users(file_path):
     with open(file_path, 'r') as user_file:
         df = csv.reader(user_file)
         for row in df:
-            cursor.execute('''
-            INSERT INTO users (firstName, lastName) Values(?, ?)
-            ''', row)
+            if len(row) == 2:
+                cursor.execute('''
+                INSERT INTO users (firstName, lastName) Values(?, ?)
+                ''', row)
         
 
 # This function will load the callLogs.csv file into the callLogs table, discarding any records with incomplete data
