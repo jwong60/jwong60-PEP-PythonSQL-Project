@@ -65,6 +65,7 @@ def load_and_clean_users(file_path):
                 cursor.execute('''
                 INSERT INTO users (firstName, lastName) VALUES (?, ?)
                 ''', row)
+    print(cursor.fetchall())
         
 
 # This function will load the callLogs.csv file into the callLogs table, discarding any records with incomplete data
